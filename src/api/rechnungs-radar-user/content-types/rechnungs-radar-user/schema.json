@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rechnungs_radar_users",
+  "info": {
+    "singularName": "rechnungs-radar-user",
+    "pluralName": "rechnungs-radar-users",
+    "displayName": "RechnungsRadarUser"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "username": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "receipts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::receipt.receipt"
+    }
+  }
+}
