@@ -17,9 +17,6 @@
     "description": {
       "type": "text"
     },
-    "category": {
-      "type": "string"
-    },
     "amount": {
       "type": "decimal"
     },
@@ -32,6 +29,30 @@
         "videos",
         "audios"
       ]
+    },
+    "location": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::location.location",
+      "inversedBy": "receipts"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "receipts"
+    },
+    "payment_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::payment-type.payment-type",
+      "inversedBy": "receipts"
+    },
+    "items": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::item.item",
+      "mappedBy": "receipts"
     }
   }
 }
